@@ -4,14 +4,7 @@ import 'basiclightbox/dist/basicLightbox.min.css';
 
 function openModal() {
   const images = refs.galleryContainer.querySelectorAll('div > img');
-  images.forEach(image => {
-    image.addEventListener('mouseover', () => {
-      image.addEventListener('click', showModal);
-    });
-    image.addEventListener('mouseout', () => {
-      image.removeEventListener('click', showModal);
-    });
-  });
+  images.forEach(image => image.addEventListener('click', showModal));
 }
 
 function showModal(event) {

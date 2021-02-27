@@ -4,6 +4,7 @@ import galleryApi from './apiService';
 import loadMoreBtn from './load-more-button';
 import { checkReceivedImages } from './receivedImages.js';
 import openModal from './modal';
+import { scroll } from './scroll';
 
 refs.formSubmit.addEventListener('submit', handleSearchGallery);
 refs.loadMoreButton.addEventListener('click', fetchArticles);
@@ -32,12 +33,6 @@ function fetchArticles() {
 
     checkReceivedImages(images);
     openModal();
-
-    window.scrollTo({
-      top:
-        document.documentElement.clientHeight +
-        document.documentElement.scrollTop,
-      behavior: 'smooth',
-    });
+    scroll();
   });
 }
